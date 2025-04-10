@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Cartão Interativo</title>
+  <style>
+    body {
+      background: linear-gradient(to right, #83a4d4, #b6fbff);
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .cartao {
+      background: white;
+      border-radius: 20px;
+      padding: 25px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      width: 300px;
+      text-align: center;
+    }
+    input {
+      padding: 8px;
+      width: 90%;
+      margin-top: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #0077cc;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #005fa3;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 5 elementos no body -->
+  <div class="cartao">
+    <h1 id="titulo">Meu Cartão</h1> <!-- Elemento 1 -->
+    <p id="descricao">Clique no botão para personalizar seu cartão!</p> <!-- Elemento 2 -->
+    <input type="text" id="campoInfo" placeholder="Digite um detalhe extra"> <!-- Elemento 3 -->
+    <button onclick="editarTitulo()">Editar Título</button> <!-- Elemento 4 -->
+    <!-- Elemento 5 é a div .cartao que envolve todos -->
+  </div>
+
+  <script>
+    function editarTitulo() {
+      const novoTitulo = prompt("Digite um novo título para seu cartão:");
+      if (novoTitulo && novoTitulo.trim() !== "") {
+        document.getElementById("titulo").textContent = novoTitulo;
+      } else {
+        alert("Nenhum título válido foi fornecido.");
+      }
+    }
+  </script>
+
+</body>
+</html>
